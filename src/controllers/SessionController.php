@@ -18,7 +18,7 @@ class SessionController extends Controller
                     exit();
                 }
             } else if ($controller !== "login") {
-                header("Location: " . BASE_URL . "/login/index");
+                header("Location: " . BASE_URL . "login/index");
                 exit();
             }
         }
