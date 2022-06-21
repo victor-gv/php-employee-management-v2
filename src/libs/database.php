@@ -1,5 +1,7 @@
 <?php 
 
+require_once ('./config/db.php');
+
 class database {
     public $connection = "mysql:host=" . HOST . ";"
     . "dbname=" . DB . ";"
