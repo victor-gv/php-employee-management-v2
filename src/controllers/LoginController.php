@@ -1,11 +1,34 @@
 <?php
 
-include('./loginManager.php');
-//we can do urlFile = basename... para determinar si viene desde index o desde dasborah la peticion y asi saber cuando hacer validate o logout
-validate();
+class LoginController extends Controller
+{
 
-require_once ("../libs/classes/Controller.php");
+    function __construct()
+    {
+        parent::__construct();
+        $this->loadModel("login");
+    }
 
-class LoginController extends Controller{
+    function index()
+    {
+        $this->view->render("/login/index");
+    }
 
+    public function logoutUser()
+    {
+        $this->model->logout();
+        header('Location: ' . BASE_URL . '/login/index');
+    }
+
+    public function loginUser()
+    {
+        $result = $this->model->login($_POST['email'], $_POST['password']);
+
+        if (!$result) {
+            header('Location: ' . BASE_URL . '/login/index');
+            exit();
+        }
+        header('Location: ' . BASE_URL . 'employee/dashboard');
+        exit();
+    }
 }

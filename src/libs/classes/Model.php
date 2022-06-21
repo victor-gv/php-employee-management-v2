@@ -1,6 +1,6 @@
 <?php 
 
-require_once('../../libs/database.php');
+require_once LIBS . '/database.php';
 
 class Model {
     protected $db;
