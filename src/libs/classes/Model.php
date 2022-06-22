@@ -11,6 +11,8 @@ class Model {
     }
 
     function query($query, $params = [], $fetch=true){
+
+        var_dump($params);
         $conn = $this->db->getConnection();
         
         $req = $conn->prepare($query);

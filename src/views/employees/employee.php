@@ -17,13 +17,13 @@
   <form action=<?php echo BASE_URL . "employee/addEmployee" ?> method="post" class="form">
     <!-- <input type="hidden" name="userid"> -->
     <div class="row">
-      <label for="name">Name</label>
-      <input type="text" class="form-control-file" name="name" id="name">
+      <label for="first_name">Name</label>
+      <input type="text" class="form-control-file" name="first_name" id="name">
 
       <!-- <input type="hidden" name=""> -->
 
-      <label for="lastname">Last Name</label>
-      <input type="text" class="form-control-file" name="lastName" id="lastname">
+      <label for="last_name">Last Name</label>
+      <input type="text" class="form-control-file" name="last_name" id="lastname">
     </div>
     <div class="row">
       <label for="email">E-mail</label>
@@ -40,7 +40,7 @@
       <label for="city">City</label>
       <input type="text" required class="form-control-file" name="city" id="city">
 
-      <label for="streetAdress">Streeet Adress</label>
+      <label for="streetAddress">Streeet Adress</label>
       <input type="text" required class="form-control-file" name="streetAddress" id="streetAdress">
     </div>
     <div class="row">
