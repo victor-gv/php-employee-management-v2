@@ -7,9 +7,7 @@ class EmployeeModel extends Model {
     }
 
     function getEmployees(){
-        $employees = $this->query(
-            "SELECT * FROM employees");
-        
-        echo (json_encode($employees));
+        return $this->query(
+            "SELECT * FROM employees;");
     }
 }

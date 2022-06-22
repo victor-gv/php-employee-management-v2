@@ -17,7 +17,7 @@ class database {
         try {
             return new PDO ($this->connection, USER, PASSWORD, $this->options);
         } catch (PDOException $e) {
-            require_once(VIEWS . "/error/error.php");
+            //require_once(VIEWS . "error/error.php");
         }
     } 
 } 

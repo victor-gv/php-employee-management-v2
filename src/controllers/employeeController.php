@@ -10,4 +10,9 @@ class employeeController extends Controller {
     function dashboard(){
         $this->view->render("employees/dashboard");
     }
+
+    function getEmployees(){
+        $res = $this->model->getEmployees();
+        echo json_encode($res);
+    }    
 }

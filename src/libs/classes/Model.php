@@ -11,17 +11,12 @@ class Model {
     }
 
     function query($query, $params = [], $fetch=true){
-        print_r($query);
-        echo "<br>";
-        print_r($params);
-        echo "<br>";
-
         $conn = $this->db->getConnection();
-        var_dump($params);
-        $email = $params[0];
+        
+        $email = $params;
         $req = $conn->prepare($query);
-        $req->bindParam(1, $email);
-        $req->execute();
+        // $req->bindParam(1, $params);
+        $req->execute($params);
 
         if($fetch){
             return $req->fetchAll();

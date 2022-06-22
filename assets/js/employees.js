@@ -1,17 +1,20 @@
 //const url = "../src/library/employeeController.php?action=getDataEmployees&source=js";
 
-const url = "../src/models/EmployeeModel.php?action=getEmployees";
+const url = "../src/models/employee/getEmployees";
 
+const uri = document.getElementById("main-nav").getAttribute("data") + "employee/getEmployees";
 
-window.onload = getAllEmployees();
+getAllEmployees();
+function getAllEmployees() {
+    fetch(uri)
+    .then(async response => {
+      try{
+        const data = await response.json();
+        console.log("objetos" + data);
+        renderDashboard(data);
+      }catch(error){
 
-async function getAllEmployees() {
-  await fetch(url)
-    .then((response) => response.json())
-    .then((data) => {
-      const dataObject = JSON.parse(data);
-      // console.log(data);
-      renderDashboard(dataObject);
+      }
     });
 }
 
@@ -25,10 +28,11 @@ function renderDashboard(data) {
     // ID EMPLOYEE
     tr.append(tdId);
     tdId.append(employee.id);
+    console.log(employee.id);
     //NAME EMPLOYEE
     let tdName = document.createElement("td");
     tr.append(tdName);
-    tdName.append(employee.name);
+    tdName.append(employee.first_name);
     //EMAIL EMPLOYEE
     let tdEmail = document.createElement("td");
     tr.append(tdEmail);
