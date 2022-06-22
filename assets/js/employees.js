@@ -1,5 +1,7 @@
 //const url = "../src/library/employeeController.php?action=getDataEmployees&source=js";
 
+const url = "../src/models/EmployeeModel.php?action=getEmployees";
+
 
 window.onload = getAllEmployees();
 
