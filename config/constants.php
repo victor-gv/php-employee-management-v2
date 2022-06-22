@@ -12,4 +12,10 @@ define("VIEWS", BASE_PATH . '/src/views/');
 define("MODELS", BASE_PATH . '/src/models/');
 
 //RESOURCES
-define("DB", BASE_PATH . '/db/');
+define("DATABASE", BASE_PATH . '/db');
+
+//LIBS
+define("LIBS", BASE_PATH . '/src/libs/');
+
+var_dump(LIBS);ECHO "<BR>";
+var_dump(BASE_PATH);

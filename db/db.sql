@@ -71,4 +71,4 @@ VALUES (
     "admin",
     "admin@assemblerschool.com",
     "123456"
-)
+);
