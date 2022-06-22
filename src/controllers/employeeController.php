@@ -14,5 +14,9 @@ class employeeController extends Controller {
     function getEmployees(){
         $res = $this->model->getEmployees();
         echo json_encode($res);
-    }    
+    }
+
+    function employee(){
+        $this->view->render("employees/employee");
+    }
 }
