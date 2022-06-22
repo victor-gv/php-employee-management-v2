@@ -19,4 +19,10 @@ class employeeController extends Controller {
     function employee(){
         $this->view->render("employees/employee");
     }
+
+    function addEmployee(){
+        $employee = $_POST;
+        $this->model->addEmployee($employee);
+        self::dashboard();
+    }
 }

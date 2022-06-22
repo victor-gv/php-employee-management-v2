@@ -13,9 +13,7 @@ class Model {
     function query($query, $params = [], $fetch=true){
         $conn = $this->db->getConnection();
         
-        $email = $params;
         $req = $conn->prepare($query);
-        // $req->bindParam(1, $params);
         $req->execute($params);
 
         if($fetch){
