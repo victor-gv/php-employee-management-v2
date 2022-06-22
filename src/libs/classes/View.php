@@ -2,6 +2,6 @@
 
 class View {
     function render($name) {
-        require_once VIEWS . "/$name.php";
+        require_once VIEWS . "$name.php";
     }
 }

@@ -9,7 +9,7 @@ class Controller{
 
     function loadModel($name){
         //Imports model file
-        require_once MODELS . "/{$name}Model.php";
+        require_once MODELS . "{$name}Model.php";
         //switch to camelCase
         $name = ucfirst(strtolower($name));
         //give to model the name of class Model
