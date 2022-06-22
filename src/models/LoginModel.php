@@ -15,10 +15,11 @@ class LoginModel extends Model
             "SELECT * FROM users WHERE email = ?",
             [$email]
         );
+        var_dump($results);
 
         if (count($results) > 0) {
             $user = $results[0];
-            if (password_verify($password, $user['password'])) {
+            if (password_verify($password, password_hash($user["password"], PASSWORD_DEFAULT))) {
                 $_SESSION['userId'] = $user['id'];
                 $_SESSION['time'] = time();
                 $_SESSION['lifeTime'] = 60 * 10;

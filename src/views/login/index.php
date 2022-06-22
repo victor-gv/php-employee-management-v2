@@ -14,9 +14,9 @@
             <div class="col-md-6 offset-md-3">
                 <h2 class="text-center text-dark mt-5">Login</h2>
                 <div class="card my-5">
-                    <form class="card-body cardbody-color p-lg-5" action="src\library\loginManager.php" method="post" autocomplete="off">
+                    <form class="card-body cardbody-color p-lg-5" action="loginUser" method="post">
                         <div class="mb-3">
-                            <input type="text"  id="Username" name="username" aria-describedby="emailHelp" placeholder="User Name">
+                            <input type="text"  id="Username" name="email" aria-describedby="emailHelp" placeholder="User Name">
                         </div>
                         <div class="mb-3">
                             <input type="password" name="password"  id="password" placeholder="password">

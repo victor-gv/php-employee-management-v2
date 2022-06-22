@@ -10,20 +10,24 @@ class Model {
         $this->db = new database();
     }
 
-    function query(){
-        $query = $this->db->getConnection()->prepare("SELECT * FROM employees");
-        
-        try {
-            $query->execute();
-            $employees = $query->fetchAll();
-            print_r($employees);
-        } catch (PDOException $e) {
-            return [];
+    function query($query, $params = [], $fetch=true){
+        print_r($query);
+        echo "<br>";
+        print_r($params);
+        echo "<br>";
+
+        $conn = $this->db->getConnection();
+        var_dump($params);
+        $email = $params[0];
+        $req = $conn->prepare($query);
+        $req->bindParam(1, $email);
+        $req->execute();
+
+        if($fetch){
+            return $req->fetchAll();
         }
-        
+        return $req;
     }
 }
 
-// $testing = new Model;
-// $testing->query();
 
