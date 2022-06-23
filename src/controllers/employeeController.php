@@ -24,6 +24,11 @@ class employeeController extends Controller {
         $employee = $_POST;
         $this->model->addEmployee($employee);
         //self::dashboard();
+        header("Location: " . BASE_URL . "employee/dashboard");
         $this->view->render("employees/dashboard");
+    }
+
+    function deleteEmployee($id){
+        $this->model->deleteEmployee($id);
     }
 }

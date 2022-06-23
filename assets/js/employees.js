@@ -1,12 +1,10 @@
 //const url = "../src/library/employeeController.php?action=getDataEmployees&source=js";
 
-const url = "../src/models/employee/getEmployees";
-
-const uri = document.getElementById("main-nav").getAttribute("data") + "employee/getEmployees";
 
 getAllEmployees();
 function getAllEmployees() {
-    fetch(uri)
+  const url = document.getElementById("main-nav").getAttribute("data") + "employee/getEmployees";
+    fetch(url)
     .then(async response => {
       try{
         const data = await response.json();
@@ -79,18 +77,35 @@ function renderDashboard(data) {
     tr.append(btnModify);
   });
 }
+
+
+
 function deleteEmployee(e) {
-  const btn = e.currentTarget.getAttribute('data-id');
-  
-  const sendReq = async () => {
-    const req = await fetch(`.././src/library/employeeController.php`, {
-        method: 'DELETE',
-        body: JSON.stringify(+btn)
-    });
+  const id = e.currentTarget.getAttribute('data-id');
+  const url = document.getElementById("main-nav").getAttribute("data") + "employee/deleteEmployee/" + id;
+  fetch(url)
+  .then(async response => {
+    try{
+      const data = await response.json();
+      console.log(data);
+      //renderDashboard(data);
+    }catch(error){
+      console.log(error);
+    }
+  });
+//   const sendReq = async () => {
+//     const req = await fetch(url, {
+//         method: 'DELETE',
+//         body: JSON.stringify(+id)
+//     });
+// }
+//sendReq();
+//window.location.reload();
+deleteTable();
+getAllEmployees();
 }
-sendReq();
-window.location.reload();
-}
+
+
 function modifyEmployee(e) {
   const userId = e.currentTarget.getAttribute('data-id');
   
@@ -102,4 +117,15 @@ function modifyEmployee(e) {
 }
 sendReq();
 
+}
+
+
+function deleteTable(){
+  const table = document.getElementById("employeeTable");
+  if (table.children != 0){
+    Array.from(table.children).forEach(element=> {
+      table.removeChild(element);
+      });
+      
+  }
 }
