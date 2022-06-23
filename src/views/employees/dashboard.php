@@ -1,11 +1,3 @@
-<?php
-//session_start();
-    // if(!isset($_SESSION['user'])){
-    // }
-    // if(isset($_GET['logout'])){
-    //     unset($_SESSION['user']);
-    //  }
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,10 +12,6 @@
 </head>
 
 <body>
-    <?php
-    print_r(count($_SESSION["p"]));
-    print_r($_SESSION["q"]);
-    ?>
     <nav class="navbar bg-light" id="main-nav" data=<?php echo BASE_URL ?>>
         <div class="container-fluid">
             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-axe" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff2825" fill="none" stroke-linecap="round" stroke-linejoin="round">

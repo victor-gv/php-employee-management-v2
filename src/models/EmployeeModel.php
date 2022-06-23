@@ -54,18 +54,14 @@ class EmployeeModel extends Model {
 
     //Set the employees ID to show them in dashboard in order
     function setIdEmployees($n){
-        
-        for($i=0; $i<count($n);$i++){
-            $index=$i+1;
-            $_SESSION["q"]="UPDATE employees SET id=$i WHERE id=$index;";
-            $query=$this->query("UPDATE employees SET id=($i+1) WHERE id=$index;");
-            try{
-                if($i == (count($n)-1)){
-                    return[true];
-                }
-            }catch(PDOException $e){
-                return [];
+        try{
+            $i=1;
+            foreach($n as $row){
+                $this->query("UPDATE employees SET id = ? WHERE id = ?", [$i, $row['id']]);
+                $i++;
             }
+        }catch(PDOException $e){
+            return [];
         }
     }
 }

@@ -23,13 +23,14 @@ class employeeController extends Controller {
     function addEmployee(){
         $employee = $_POST;
         $this->model->addEmployee($employee);
+        $numOfEmployees = $this->model->getNumEmployees();
+        $this->model->setIdEmployees($numOfEmployees);
         header("Location: " . BASE_URL . "employee/dashboard");
     }
 
     function deleteEmployee($id){
         $this->model->deleteEmployee($id);
         $numOfEmployees = $this->model->getNumEmployees();
-        $_SESSION["p"] = $numOfEmployees;
         $this->model->setIdEmployees($numOfEmployees);
     }
 

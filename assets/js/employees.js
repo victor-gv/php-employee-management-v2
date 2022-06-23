@@ -88,7 +88,6 @@ function deleteEmployee(e) {
     try{
       const data = await response.json();
       console.log(data);
-      //renderDashboard(data);
     }catch(error){
       console.log(error);
     }
