@@ -10,10 +10,10 @@ function getAllEmployees() {
     .then(async response => {
       try{
         const data = await response.json();
-        console.log("objetos" + data);
+        console.log(data);
         renderDashboard(data);
       }catch(error){
-
+        console.log(error);
       }
     });
 }
@@ -28,7 +28,6 @@ function renderDashboard(data) {
     // ID EMPLOYEE
     tr.append(tdId);
     tdId.append(employee.id);
-    console.log(employee.id);
     //NAME EMPLOYEE
     let tdName = document.createElement("td");
     tr.append(tdName);

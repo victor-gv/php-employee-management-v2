@@ -12,17 +12,14 @@ class Model {
 
     function query($query, $params = [], $fetch=true){
 
-        var_dump($params);
-        $conn = $this->db->getConnection();
-        
-        $req = $conn->prepare($query);
-        $req->execute($params);
-
+        $stmt = $this->db->getConnection()->prepare($query);
+        $stmt->execute($params);
         if($fetch){
-            return $req->fetchAll();
+            return $stmt->fetchAll();
         }
-        return $req;
+        return $stmt;
     }
 }
+
 
 
