@@ -34,4 +34,10 @@ class employeeController extends Controller {
         $this->view->employee = $this->model->showEmployee($id)[0];
         self::employee();
     }
+
+    function modifyEmployee(){
+        $employee = $_POST;
+        $this->model->modifyEmployee($employee);
+        header("Location: " . BASE_URL . "employee/dashboard");
+    }
 }

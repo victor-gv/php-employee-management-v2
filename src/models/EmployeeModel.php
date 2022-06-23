@@ -23,6 +23,22 @@ class EmployeeModel extends Model {
     }
 
     function showEmployee($id){
-        return $this->query("SELECT first_name, last_name, email, gender, city, streetAddress, state, age, postalCode, phoneNumber  FROM employees WHERE id = ?", [$id]);
+        return $this->query("SELECT id, first_name, last_name, email, gender, city, streetAddress, state, age, postalCode, phoneNumber  FROM employees WHERE id = ?", [$id]);
+    }
+
+    function modifyEmployee($employee){
+        $str="UPDATE employees SET ";
+        $keys = array_keys($employee);
+        $values = array_values($employee);
+
+        for($i=1;$i<10;$i++){
+            if($i<=8){
+                $str=$str . $keys[$i] . "='" . $values[$i] . "',";
+            }else{
+                $str=$str . $keys[$i] . "='" . $values[$i] . "' ";
+            }
+        }
+        $str=$str . "WHERE id=" . $values[0];
+        return $this->query($str);
     }
 }

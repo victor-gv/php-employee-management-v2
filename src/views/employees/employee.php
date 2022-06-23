@@ -15,23 +15,23 @@
 
 <body>
   <h1 class="title">Employee Page</h1>
-  <form action=<?php echo BASE_URL . "employee/addEmployee" ?> method="post" class="form">
-    <!-- <input type="hidden" name="userid"> -->
+  <form action=<?php if(!isset($this->employee)){echo BASE_URL . "employee/addEmployee";}else{echo BASE_URL . "employee/modifyEmployee/" . $this->employee['id'];} ?> method="post" class="form">
+    <input type="hidden" name="id" value = <?php if(isset($this->employee)){echo $this->employee['id'];}else{echo "0";}?>>
     <div class="row">
       <label for="first_name">Name</label>
-      <input type="text" class="form-control-file" name="first_name" id="name" value = <?= $this->employee['first_name'] ?>>
+      <input type="text" class="form-control-file" name="first_name" id="name" value = <?php if(isset($this->employee)){echo $this->employee['first_name'];}?>>
 
       <!-- <input type="hidden" name=""> -->
 
       <label for="last_name">Last Name</label>
-      <input type="text" class="form-control-file" name="last_name" id="lastname">
+      <input type="text" class="form-control-file" name="last_name" id="lastname" value = <?php if(isset($this->employee)){echo $this->employee['last_name'];}?>>
     </div>
     <div class="row">
       <label for="email">E-mail</label>
-      <input type="email" class="form-control-file" name="email" id="email">
+      <input type="email" class="form-control-file" name="email" id="email" value = <?php if(isset($this->employee)){echo $this->employee['email'];}?>>
 
       <label for="gender">Gender</label>
-      <select name="gender" class="form-control-file" id="gender">
+      <select name="gender" class="form-control-file" id="gender" value = <?php if(isset($this->employee)){echo $this->employee['gender'];}?>>
         <option value="man">Man</option>
         <option value="woman">Woman</option>
         <option value="others">Others</option>
@@ -39,24 +39,24 @@
     </div>
     <div class="row">
       <label for="city">City</label>
-      <input type="text" required class="form-control-file" name="city" id="city">
+      <input type="text" required class="form-control-file" name="city" id="city" value = <?php if(isset($this->employee)){echo $this->employee['city'];}?>>
 
       <label for="streetAddress">Streeet Adress</label>
-      <input type="text" required class="form-control-file" name="streetAddress" id="streetAdress">
+      <input type="text" required class="form-control-file" name="streetAddress" id="streetAdress" value = <?php if(isset($this->employee)){echo $this->employee['streetAddress'];}?>>
     </div>
     <div class="row">
       <label for="state">State</label>
-      <input type="text" required class="form-control-file" name="state" id="state">
+      <input type="text" required class="form-control-file" name="state" id="state" value = <?php if(isset($this->employee)){echo $this->employee['state'];}?>>
 
       <label for="age">Age</label>
-      <input type="text" required class="form-control-file" name="age" id="age">
+      <input type="text" required class="form-control-file" name="age" id="age" value = <?php if(isset($this->employee)){echo $this->employee['age'];}?>>
     </div>
     <div class="row">
       <label for="postalCode"> Postal code</label>
-      <input type="text" required class="form-control-file" name="postalCode" id="postalCode">
+      <input type="text" required class="form-control-file" name="postalCode" id="postalCode" value = <?php if(isset($this->employee)){echo $this->employee['postalCode'];}?>>
 
       <label for="phoneNumber">Phone Number</label>
-      <input type="text" required class="form-control-file" name="phoneNumber" id="phoneNumber">
+      <input type="text" required class="form-control-file" name="phoneNumber" id="phoneNumber" value = <?php if(isset($this->employee)){echo $this->employee['phoneNumber'];}?>>
     </div>
     <div class="buttons">
       <button type="submit" required class="btn btn-primary">Submit</button>
