@@ -6,6 +6,7 @@ class Router
         $url = isset($_GET['url']) ? $_GET['url'] : null;
         $url = rtrim($url, '/');
         $url = explode('/', $url);
+        //print_r($url);
 
         $controller_file = CONTROLLERS . "{$url[0]}Controller.php";
         $controller = ucfirst($url[0]) . 'Controller';

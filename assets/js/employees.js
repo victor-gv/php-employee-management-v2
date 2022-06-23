@@ -73,7 +73,7 @@ function renderDashboard(data) {
     btnModify.setAttribute('id','btnModify');
     btnModify.textContent="Modify";
     btnModify.setAttribute('data-id', employee.id);
-    btnModify.addEventListener('click', modifyEmployee);
+    btnModify.addEventListener('click', showEmployee);
     tr.append(btnModify);
   });
 }
@@ -98,20 +98,23 @@ getAllEmployees();
 }
 
 
-function modifyEmployee(e) {
+function showEmployee(e) {
   const id = e.currentTarget.getAttribute('data-id');
-  const url = document.getElementById("main-nav").getAttribute("data") + "employee/modifyEmployee/" + id;
+  const url = document.getElementById("main-nav").getAttribute("data") + "employee/showEmployee/" + id;
+  console.log(url);
+  const redirectedUrl = document.getElementById("main-nav").getAttribute("data") + "employee/employee";
   
-  fetch(url)
-  .then(async response => {
-    try{
-      const data = await response.json();
-      console.log(data);
-      //renderDashboard(data);
-    }catch(error){
-      console.log(error);
-    }
-  });
+  // fetch(url)
+  // .then(async response => {
+  //   try{
+  //     const data = await response.json();
+  //     console.log(data);
+  //     //renderDashboard(data);
+  //   }catch(error){
+  //     console.log(error);
+  //   }
+  // });
+  location.href = url;
 }
 
 

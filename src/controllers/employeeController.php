@@ -23,18 +23,17 @@ class employeeController extends Controller {
     function addEmployee(){
         $employee = $_POST;
         $this->model->addEmployee($employee);
-        //self::dashboard();
         header("Location: " . BASE_URL . "employee/dashboard");
-        $this->view->render("employees/dashboard");
     }
 
     function deleteEmployee($id){
         $this->model->deleteEmployee($id);
     }
 
-    function modifyEmployee($id){
-        $res = $this->model->modifyEmployee($id);
-        var_dump($res);
-        $this->view->render("employees/employee");
+    function showEmployee($id){
+        $employee = $this->model->showEmployee($id);
+        $_SESSION['employee'] = $employee;
+        self::employee();
+        //header("Location: " . BASE_URL . "employee/employee");
     }
 }

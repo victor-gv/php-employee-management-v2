@@ -22,7 +22,7 @@ class EmployeeModel extends Model {
         return $this->query("DELETE FROM employees WHERE id = ?", [$id]);
     }
 
-    function modifyEmployee($id){
+    function showEmployee($id){
         return $this->query("SELECT first_name, last_name, email, gender, city, streetAddress, state, age, postalCode, phoneNumber  FROM employees WHERE id = ?", [$id]);
     }
 }
