@@ -31,4 +31,10 @@ class employeeController extends Controller {
     function deleteEmployee($id){
         $this->model->deleteEmployee($id);
     }
+
+    function modifyEmployee($id){
+        $res = $this->model->modifyEmployee($id);
+        var_dump($res);
+        $this->view->render("employees/employee");
+    }
 }

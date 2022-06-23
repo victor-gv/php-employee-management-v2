@@ -93,30 +93,25 @@ function deleteEmployee(e) {
       console.log(error);
     }
   });
-//   const sendReq = async () => {
-//     const req = await fetch(url, {
-//         method: 'DELETE',
-//         body: JSON.stringify(+id)
-//     });
-// }
-//sendReq();
-//window.location.reload();
 deleteTable();
 getAllEmployees();
 }
 
 
 function modifyEmployee(e) {
-  const userId = e.currentTarget.getAttribute('data-id');
+  const id = e.currentTarget.getAttribute('data-id');
+  const url = document.getElementById("main-nav").getAttribute("data") + "employee/modifyEmployee/" + id;
   
-  const sendReq = async () => {
-    const req = await fetch(`.././src/library/employeeController.php`, {
-        method: 'GET',
-        body: JSON.stringify(+userId)
-    });
-}
-sendReq();
-
+  fetch(url)
+  .then(async response => {
+    try{
+      const data = await response.json();
+      console.log(data);
+      //renderDashboard(data);
+    }catch(error){
+      console.log(error);
+    }
+  });
 }
 
 
