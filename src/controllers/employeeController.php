@@ -28,6 +28,9 @@ class employeeController extends Controller {
 
     function deleteEmployee($id){
         $this->model->deleteEmployee($id);
+        $numOfEmployees = $this->model->getNumEmployees();
+        $_SESSION["p"] = $numOfEmployees;
+        $this->model->setIdEmployees($numOfEmployees);
     }
 
     function showEmployee($id){

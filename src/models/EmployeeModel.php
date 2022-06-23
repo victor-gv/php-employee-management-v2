@@ -41,4 +41,31 @@ class EmployeeModel extends Model {
         $str=$str . "WHERE id=" . $values[0];
         return $this->query($str);
     }
+
+    //function that gets a list of the employees ids
+    function getNumEmployees(){
+        $query = $this->query("SELECT e.id FROM employees e ORDER BY e.id ASC;");
+        try{
+            return $query;
+        }catch(PDOException $e){
+            return [];
+        }
+    }
+
+    //Set the employees ID to show them in dashboard in order
+    function setIdEmployees($n){
+        
+        for($i=0; $i<count($n);$i++){
+            $index=$i+1;
+            $_SESSION["q"]="UPDATE employees SET id=$i WHERE id=$index;";
+            $query=$this->query("UPDATE employees SET id=($i+1) WHERE id=$index;");
+            try{
+                if($i == (count($n)-1)){
+                    return[true];
+                }
+            }catch(PDOException $e){
+                return [];
+            }
+        }
+    }
 }
