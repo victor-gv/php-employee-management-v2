@@ -31,9 +31,7 @@ class employeeController extends Controller {
     }
 
     function showEmployee($id){
-        $employee = $this->model->showEmployee($id);
-        $_SESSION['employee'] = $employee;
+        $this->view->employee = $this->model->showEmployee($id)[0];
         self::employee();
-        //header("Location: " . BASE_URL . "employee/employee");
     }
 }

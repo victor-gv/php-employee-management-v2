@@ -101,19 +101,7 @@ getAllEmployees();
 function showEmployee(e) {
   const id = e.currentTarget.getAttribute('data-id');
   const url = document.getElementById("main-nav").getAttribute("data") + "employee/showEmployee/" + id;
-  console.log(url);
-  const redirectedUrl = document.getElementById("main-nav").getAttribute("data") + "employee/employee";
-  
-  // fetch(url)
-  // .then(async response => {
-  //   try{
-  //     const data = await response.json();
-  //     console.log(data);
-  //     //renderDashboard(data);
-  //   }catch(error){
-  //     console.log(error);
-  //   }
-  // });
+
   location.href = url;
 }
 

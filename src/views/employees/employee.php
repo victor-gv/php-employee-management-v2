@@ -1,16 +1,3 @@
-<?php
-$employee = $_SESSION['employee'];
-$first_name = $employee[0]['first_name'];
-$last_name = $employee[0]['last_name'];
-$email = $employee[0]['email'];
-$gender = $employee[0]['gender'];
-$city = $employee[0]['city'];
-$streetAddress = $employee[0]['streetAddress'];
-$state = $employee[0]['state'];
-$age = $employee[0]['age'];
-$postalCode = $employee[0]['postalCode'];
-$phoneNumber = $employee[0]['phoneNumber'];
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,19 +19,19 @@ $phoneNumber = $employee[0]['phoneNumber'];
     <!-- <input type="hidden" name="userid"> -->
     <div class="row">
       <label for="first_name">Name</label>
-      <input type="text" class="form-control-file" name="first_name" id="name" value = <?= $first_name ?>>
+      <input type="text" class="form-control-file" name="first_name" id="name" value = <?= $this->employee['first_name'] ?>>
 
       <!-- <input type="hidden" name=""> -->
 
       <label for="last_name">Last Name</label>
-      <input type="text" class="form-control-file" name="last_name" id="lastname" value = <?= $last_name ?>>
+      <input type="text" class="form-control-file" name="last_name" id="lastname">
     </div>
     <div class="row">
       <label for="email">E-mail</label>
-      <input type="email" class="form-control-file" name="email" id="email" value = <?= $email ?>>
+      <input type="email" class="form-control-file" name="email" id="email">
 
       <label for="gender">Gender</label>
-      <select name="gender" class="form-control-file" id="gender" value = <?= $gender ?>>
+      <select name="gender" class="form-control-file" id="gender">
         <option value="man">Man</option>
         <option value="woman">Woman</option>
         <option value="others">Others</option>
@@ -52,24 +39,24 @@ $phoneNumber = $employee[0]['phoneNumber'];
     </div>
     <div class="row">
       <label for="city">City</label>
-      <input type="text" required class="form-control-file" name="city" id="city" value = <?= $city ?>>
+      <input type="text" required class="form-control-file" name="city" id="city">
 
       <label for="streetAddress">Streeet Adress</label>
-      <input type="text" required class="form-control-file" name="streetAddress" id="streetAdress" value = <?= $streetAddress ?>>
+      <input type="text" required class="form-control-file" name="streetAddress" id="streetAdress">
     </div>
     <div class="row">
       <label for="state">State</label>
-      <input type="text" required class="form-control-file" name="state" id="state" value = <?= $state ?>>
+      <input type="text" required class="form-control-file" name="state" id="state">
 
       <label for="age">Age</label>
-      <input type="text" required class="form-control-file" name="age" id="age" value = <?= $age ?>>
+      <input type="text" required class="form-control-file" name="age" id="age">
     </div>
     <div class="row">
       <label for="postalCode"> Postal code</label>
-      <input type="text" required class="form-control-file" name="postalCode" id="postalCode" value = <?= $postalCode ?>>
+      <input type="text" required class="form-control-file" name="postalCode" id="postalCode">
 
       <label for="phoneNumber">Phone Number</label>
-      <input type="text" required class="form-control-file" name="phoneNumber" id="phoneNumber" value = <?= $phoneNumber ?>>
+      <input type="text" required class="form-control-file" name="phoneNumber" id="phoneNumber">
     </div>
     <div class="buttons">
       <button type="submit" required class="btn btn-primary">Submit</button>
