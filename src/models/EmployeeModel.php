@@ -18,6 +18,10 @@ class EmployeeModel extends Model {
             }, array_keys($employee))) . ')', $employee);
     }
 
+    function employeeExist($employee){
+        return $this->query("SELECT * FROM employees WHERE phoneNumber=?;",[$employee["phoneNumber"]]);
+    }
+
     function deleteEmployee($id){
         return $this->query("DELETE FROM employees WHERE id = ?", [$id]);
     }
@@ -60,6 +64,7 @@ class EmployeeModel extends Model {
                 $this->query("UPDATE employees SET id = ? WHERE id = ?", [$i, $row['id']]);
                 $i++;
             }
+            return[true];
         }catch(PDOException $e){
             return [];
         }

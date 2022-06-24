@@ -27,3 +27,13 @@
 button{
     margin: 0 20px;
 }
+
+.dialog--error{
+    border-radius: 5px;
+    background-color: rgb(255, 169, 169);
+}
+
+.dialog-ok{
+    border-radius: 5px;
+    background-color: rgb(169, 255, 195);
+}

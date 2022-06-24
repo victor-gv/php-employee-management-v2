@@ -22,13 +22,20 @@ class employeeController extends Controller {
 
     function addEmployee(){
         $employee = $_POST;
-        $this->model->addEmployee($employee);
-        $numOfEmployees = $this->model->getNumEmployees();
-        $this->model->setIdEmployees($numOfEmployees);
+        $checkEmployee = $this->model->employeeExist($employee);
+        if(count($checkEmployee)==0){
+            $this->model->addEmployee($employee);
+            $numOfEmployees = $this->model->getNumEmployees();
+            $this->model->setIdEmployees($numOfEmployees);
+            $_SESSION["msg"] = "Employee added succesfully";
+        }else{
+            $_SESSION["msg"] = "Employee already exists.";
+        }
         header("Location: " . BASE_URL . "employee/dashboard");
     }
 
     function deleteEmployee($id){
+        $_SESSION["msg"] = "Employee deleted";
         $this->model->deleteEmployee($id);
         $numOfEmployees = $this->model->getNumEmployees();
         $this->model->setIdEmployees($numOfEmployees);

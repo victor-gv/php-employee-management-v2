@@ -94,6 +94,18 @@ function deleteEmployee(e) {
   });
 deleteTable();
 getAllEmployees();
+
+const table = document.getElementById("table");
+const dialog = document.createElement("dialog");
+dialog.setAttribute("id", "dialog--error");
+dialog.setAttribute("open","");
+dialog.setAttribute("class", "dialog-ok")
+dialog.textContent = "Employee deleted.";  
+table.append(dialog);
+
+setTimeout(function(){
+    document.getElementById("dialog--error").remove();
+},3000);
 }
 
 
