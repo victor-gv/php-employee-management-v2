@@ -6,12 +6,11 @@ class Router
         $url = isset($_GET['url']) ? $_GET['url'] : null;
         $url = rtrim($url, '/');
         $url = explode('/', $url);
-        //print_r($url);
 
         $controller_file = CONTROLLERS . "{$url[0]}Controller.php";
         $controller = ucfirst($url[0]) . 'Controller';
 
-        //$errorController = new ErrorController;
+        $errorController = new ErrorController;
 
         //After instanciate the controller we check if the user is logged in
         $session = new SessionController();
@@ -27,12 +26,11 @@ class Router
                         $controller->{$url[1]}();
                     }
                 } else {
-                    //$errorController->showError("This action doesn't exist");
+                    $errorController->showError("This action doesn't exist");
                 }
             }
         } else {
-            
-            //$errorController->showError("This page doesn't exist");
+            $errorController->showError("This page doesn't exist");
         }
     }
 }
