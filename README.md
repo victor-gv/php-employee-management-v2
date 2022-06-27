@@ -49,9 +49,17 @@ This project could be used to manage employee information.
 
 
 ## Images
+
+### Login page
 <img src="./assets/images/login.PNG">
+
+### Dashboard page
 <img src="./assets/images/dashboard.PNG">
+
+### Employee page
 <img src="./assets/images/employee.PNG">
+
+### Error page
 <img src="./assets/images/error.PNG">
 
 
