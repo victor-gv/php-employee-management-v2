@@ -27,9 +27,9 @@ class employeeController extends Controller {
             $this->model->addEmployee($employee);
             $numOfEmployees = $this->model->getNumEmployees();
             $this->model->setIdEmployees($numOfEmployees);
-            $_SESSION["msg"] = "Employee added succesfully";
+            $_SESSION["msg-added"] = "Employee added succesfully";
         }else{
-            $_SESSION["msg"] = "Employee already exists.";
+            $_SESSION["msg-error"] = "Employee already exists.";
         }
         header("Location: " . BASE_URL . "employee/dashboard");
     }

@@ -11,12 +11,14 @@
 }
 
 .form{
+    margin-top: 3%;
     width: 80%;
     margin-left: 10%;
     padding: 20px 20px;
     border: solid rgb(221, 220, 220) 2px;
 }
 .title{
+    margin-top: 50px;
     text-align: center;
     margin-bottom: 50px;
 }
@@ -36,4 +38,35 @@ button{
 .dialog-ok{
     border-radius: 5px;
     background-color: rgb(169, 255, 195);
+}
+
+
+.navigator {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    list-style: none;
+    background-color: #e9ecef;
+    border-radius: 0.25rem;
+    text-decoration: none;
+}
+
+.navigator-item {
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.navigator-item a {
+    color: #2c3f54;
+    text-decoration: none;
+}
+
+.span-line {
+    font-size: 1.1rem;
+}
+
+.current-tag {
+    font-weight: bold;
 }

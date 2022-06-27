@@ -9,12 +9,16 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/main.css">
-  <script src="../assets/js/employees.js" defer></script>
+  <script src=<?php echo BASE_URL . "assets/js/employees.js" ?> defer></script>
+  <script src=<?php echo BASE_URL . "assets/js/navigator.js" ?> defer></script>
   <title>Employee Page</title>
 </head>
 
 <body>
-  <h1 class="title">Employee Page</h1>
+<?php
+    include BASE_PATH . '/assets/templates/navbar.php';
+?>
+
   <form action=<?php if(!isset($this->employee)){echo BASE_URL . "employee/addEmployee";}else{echo BASE_URL . "employee/modifyEmployee/" . $this->employee['id'];} ?> method="post" class="form">
     <input type="hidden" name="id" value = <?php if(isset($this->employee)){echo $this->employee['id'];}else{echo "0";}?>>
     <div class="row">
