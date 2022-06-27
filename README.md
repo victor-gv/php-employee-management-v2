@@ -19,22 +19,6 @@
 - [Usage](#usage)
 - [Based on](#based-on)
 
-## Requirements
-
-- You need to have a database with all the employees and users in your mysql workspace. We provide you with all the required queries to create the database, its tables and insert mock data inside the **resources** folder.
-- Set your database configuration on the **config/db.php** file. (username, password, dbname etc.)
-
-## Install - Run
-
-The project dependencies are already referenced in the **package-lock.json** file in the root folder. For that reason, it is only necesary to run the following command to allow these to work:
-
-```sh
-npm instal
-```
-
-In order to complete/execute this project, the set up of a server environment and PHP interpreter is needed. You need to have at least PHP v7.4 or above to develop this project, which is capable of running PHP to its latest version.
-
-- XAMPP with PHP >= 7.4
 
 ## Technologies used
 
@@ -48,17 +32,14 @@ In order to complete/execute this project, the set up of a server environment an
 
 \* Bootstrap - Front-end Library
 
-\* JQuery - JS library
+\* OOP - Object Oriented Programming
 
-\* JS-Grid - JS library
+\* MVC - Model–view–controller 
 
 \* PHP - Scripting language
 
 \* XAMPP - Open source cross-platform web server
 
-## Download project
-
-To download or install this project in your local computer, either clone the repository or downdload. In order to run the project, please refer to the **requirements** and **install** section in this README file.
 
 ## Usage
 
@@ -68,12 +49,12 @@ This project could be used to manage employee information.
 
 ## Based on
 
-This repository is based on a past delivery from master's students:
+This repository is based on a past delivery from master's students Alejandro Gaerste and Joan Gau. The project has been enhanced by the addition of OOP, MVC, and a few functions, such as the ability to update an existing employee, display an error page, and display a message when adding or deleting an employee.
 
-👤 **Víctor Martínez**
+## Work done by:
 
-👤 **Ismael Vázquez**
+👤 **Juan Carlos Cabello** (https://github.com/JcarlosCabello1991)
 
----
+👤 **Víctor García-Vao** (https://github.com/victor-gv)
 
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
+
