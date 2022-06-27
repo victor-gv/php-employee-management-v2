@@ -47,6 +47,14 @@
 This project could be used to manage employee information.
 ```
 
+
+## Images
+<img src="./assets/images/login.PNG">
+<img src="./assets/images/dashboard.PNG">
+<img src="./assets/images/employee.PNG">
+<img src="./assets/images/error.PNG">
+
+
 ## Based on
 
 This repository is based on a past delivery from master's students Alejandro Gaerste and Joan Gau. The project has been enhanced by the addition of OOP, MVC, and a few functions, such as the ability to update an existing employee, display an error page, and display a message when adding or deleting an employee.
