@@ -27,7 +27,7 @@ class employeeController extends Controller {
             $this->model->addEmployee($employee);
             $numOfEmployees = $this->model->getNumEmployees();
             $this->model->setIdEmployees($numOfEmployees);
-            $_SESSION["msg-added"] = "Employee added succesfully";
+            $_SESSION["msg-added"] = "Employee added succesfully.";
         }else{
             $_SESSION["msg-error"] = "Employee already exists.";
         }
@@ -49,7 +49,7 @@ class employeeController extends Controller {
     function modifyEmployee(){
         $employee = $_POST;
         $this->model->modifyEmployee($employee);
-        $_SESSION["msg-added"] = "Employee modified succesfully";
+        $_SESSION["msg-added"] = "Employee modified succesfully.";
         header("Location: " . BASE_URL . "employee/dashboard");
     }
 }
