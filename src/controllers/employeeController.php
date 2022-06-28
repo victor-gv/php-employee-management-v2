@@ -49,6 +49,7 @@ class employeeController extends Controller {
     function modifyEmployee(){
         $employee = $_POST;
         $this->model->modifyEmployee($employee);
+        $_SESSION["msg-added"] = "Employee modified succesfully";
         header("Location: " . BASE_URL . "employee/dashboard");
     }
 }
