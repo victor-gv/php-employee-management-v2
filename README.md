@@ -67,6 +67,11 @@ This project could be used to manage employee information.
 
 This repository is based on a past delivery from master's students Alejandro Gaerste and Joan Gau. The project has been enhanced by the addition of OOP, MVC, and a few functions, such as the ability to update an existing employee, display an error page, and display a message when adding or deleting an employee.
 
+
+## Login
+**User:**  admin@assemblerschool.com
+**Password:**  123456
+
 ## Work done by:
 
 👤 **Juan Carlos Cabello** (https://github.com/JcarlosCabello1991)
